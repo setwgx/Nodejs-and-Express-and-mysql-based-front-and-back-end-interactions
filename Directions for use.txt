@@ -1,0 +1,11 @@
+首先安装NodeJS、Express和MySQL
+
+导入数据库
+
+进入DOS命令，切换nodejs-express-mysql\NodeJSProject\expressdemo\app目录下
+使用指令npm start来启动服务
+
+然后打开index.html进行操作
+
+详情请见https://mccartyzzz.github.io/blog/Sample-presentation-base-on-Nodejs-and-express-and-mysql/
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Main</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+</head>
+
+<body>
+    <!--排行榜内容-->
+    <div>
+        <div>
+            <table id="tab" cellpadding="10" cellspacing="15" frame="box">
+                <!--单元格调整-->
+                <tr>
+                    <td><b>排行榜</b></td>
+                </tr>
+
+                <tr class="tr">
+                    <!--一行-->
+                    <!--四列-->
+                    <td>username</td>
+                    <td>checktime</td>
+                    <td>score</td>
+                    <td>time</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    </br>
+    <!-- 提交榜单 -->
+    <div class="hidden">
+        <form action="http://localhost:3001/add" method="GET">
+            <label for="">NAME:</label><input type="text" name="upload_name" id="upload_name"></br></br>
+            <label for="">TIME:</label><input type="text" name="upload_time" id="upload_time"></br></br>
+            <label for="">CHECKTIME:</label><input type="text" name="upload_checktime" id="upload_checktime"></br></br>
+            <label for="">SCORE:</label><input type="text" name="upload_score" id="upload_score"></br></br>
+            <input type="submit" value="submit" id="s_submit">
+        </form>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        $(function () {
+            $.get('http://localhost:3000/', function (data) {
+                for (let list of data) {
+                    let table = '<tr class="tbd"><td>';
+                    let s = '</td><td>';
+                    for (let ele of list) {
+                        table += (ele + s);
+                    }
+                    table += '</td></tr>';
+                    $("#tab").append(table);
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
