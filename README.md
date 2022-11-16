@@ -1,4 +1,4 @@
-# NodejsAndExpressAndMysqlForSudoku
+# sudoku
 
 ## Introduction
 The Express framework is used here to implement simple examples of HTML and Mysql back-end data interaction.
